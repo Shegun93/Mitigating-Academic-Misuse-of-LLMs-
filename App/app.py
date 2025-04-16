@@ -6,7 +6,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 app = Flask(__name__)
 
 # Model Configuration
-model_name = "nairs-2b-fine-tuned"
+model_name = "nairs-2e"
 quantization_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.float16)
 use_quantization_config = True
 
