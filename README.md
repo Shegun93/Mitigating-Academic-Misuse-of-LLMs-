@@ -35,6 +35,11 @@ The model was fine-tuned using:
 └── templates
     └── index.html
 ```
+## Usage
+Clone the repo
+```
+git clone https://github.com/Shegun93/nairs_paper.git
+cd nairs_paper
 
 ## Key capabilities:
 
