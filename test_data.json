@@ -1,0 +1,122 @@
+[
+    {
+      "input_text": "In quantum mechanics, wave-particle duality describes how particles exhibit both wave-like and particle-like properties. This principle is fundamental to understanding phenomena like electron diffraction.",
+      "question": "Which experiment first demonstrated the wave nature of electrons?",
+      "options": {
+        "A": "Michelson-Morley experiment",
+        "B": "Davisson-Germer experiment",
+        "C": "Young's double-slit experiment with light",
+        "D": "Rutherford's gold foil experiment"
+      },
+      "correct_option": "B",
+      "explanation": "The Davisson-Germer experiment (1927) confirmed the wave nature of electrons by observing diffraction patterns when electrons were scattered by a nickel crystal."
+    },
+    {
+      "input_text": "Special relativity introduces the concept of time dilation, where time intervals measured in a moving frame appear longer to a stationary observer.",
+      "question": "A clock traveling at 0.8c relative to Earth will appear to run slower by what factor compared to Earth's clock?",
+      "options": {
+        "A": "0.6",
+        "B": "0.8",
+        "C": "1.25",
+        "D": "1.67"
+      },
+      "correct_option": "A",
+      "explanation": "Time dilation factor γ = 1/√(1 - v²/c²) = 1/√(1 - 0.64) = 1.67. The moving clock runs slower by a factor of 1/γ ≈ 0.6."
+    },
+    {
+      "input_text": "Thermodynamics states that entropy in an isolated system never decreases, as described by the Second Law.",
+      "question": "Which process violates the Second Law of Thermodynamics?",
+      "options": {
+        "A": "Heat flowing from hot to cold",
+        "B": "Spontaneous decrease in entropy",
+        "C": "Energy conservation in a closed system",
+        "D": "Isothermal expansion of a gas"
+      },
+      "correct_option": "B",
+      "explanation": "A spontaneous decrease in entropy (without external work) violates the Second Law, which mandates entropy must increase or remain constant in isolated systems."
+    },
+    {
+      "input_text": "In electromagnetism, Maxwell's equations unify electric and magnetic fields and predict electromagnetic waves.",
+      "question": "Which Maxwell equation describes how a changing magnetic field induces an electric field?",
+      "options": {
+        "A": "Gauss's Law",
+        "B": "Faraday's Law",
+        "C": "Ampere's Law",
+        "D": "Gauss's Law for Magnetism"
+      },
+      "correct_option": "B",
+      "explanation": "Faraday's Law of Induction states that a time-varying magnetic field induces a circulating electric field: ∇×E = -∂B/∂t."
+    },
+    {
+      "input_text": "Nuclear physics explains binding energy as the energy required to disassemble a nucleus into its constituent protons and neutrons.",
+      "question": "Where does the maximum binding energy per nucleon occur on the binding energy curve?",
+      "options": {
+        "A": "Hydrogen (A=1)",
+        "B": "Iron (A=56)",
+        "C": "Uranium (A=238)",
+        "D": "Helium (A=4)"
+      },
+      "correct_option": "B",
+      "explanation": "Iron-56 has the highest binding energy per nucleon (~8.8 MeV), making it the most stable nucleus. Heavier/lighter nuclei have lower binding energy."
+    },
+    {
+      "input_text": "In particle physics, the Standard Model classifies fundamental particles into quarks, leptons, and gauge bosons.",
+      "question": "Which particle mediates the electromagnetic force?",
+      "options": {
+        "A": "Gluon",
+        "B": "W boson",
+        "C": "Photon",
+        "D": "Higgs boson"
+      },
+      "correct_option": "C",
+      "explanation": "The photon (γ) is the gauge boson that mediates the electromagnetic force between charged particles."
+    },
+    {
+      "input_text": "General relativity describes gravity as the curvature of spacetime caused by mass and energy.",
+      "question": "What observable phenomenon confirmed Einstein's theory of general relativity in 1919?",
+      "options": {
+        "A": "Gravitational redshift",
+        "B": "Time dilation in GPS satellites",
+        "C": "Bending of starlight by the Sun",
+        "D": "Black hole mergers"
+      },
+      "correct_option": "C",
+      "explanation": "Eddington's observation of starlight bending during a solar eclipse confirmed general relativity's prediction that massive objects curve spacetime."
+    },
+    {
+      "input_text": "In condensed matter physics, superconductors exhibit zero electrical resistance below a critical temperature.",
+      "question": "What is the BCS theory used to explain?",
+      "options": {
+        "A": "High-temperature superconductivity",
+        "B": "Formation of Cooper pairs",
+        "C": "Quantum Hall effect",
+        "D": "Semiconductor band gaps"
+      },
+      "correct_option": "B",
+      "explanation": "The BCS theory explains conventional superconductivity via Cooper pairs—electron pairs bound by lattice vibrations (phonons)."
+    },
+    {
+      "input_text": "Quantum field theory combines quantum mechanics with special relativity to describe particle interactions.",
+      "question": "Which quantum field theory describes the strong nuclear force?",
+      "options": {
+        "A": "Electrodynamics (QED)",
+        "B": "Chromodynamics (QCD)",
+        "C": "Electroweak Theory",
+        "D": "String Theory"
+      },
+      "correct_option": "B",
+      "explanation": "Quantum Chromodynamics (QCD) describes the strong force mediated by gluons between quarks and gluons."
+    },
+    {
+      "input_text": "The Heisenberg Uncertainty Principle states that certain pairs of physical properties cannot be simultaneously measured with arbitrary precision.",
+      "question": "Which pair of properties is governed by the Uncertainty Principle?",
+      "options": {
+        "A": "Energy and time",
+        "B": "Charge and mass",
+        "C": "Velocity and acceleration",
+        "D": "Temperature and entropy"
+      },
+      "correct_option": "A",
+      "explanation": "The Uncertainty Principle applies to conjugate variables like position-momentum (ΔxΔp ≥ ħ/2) and energy-time (ΔEΔt ≥ ħ/2)."
+    }
+  ]

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2 class="text-center">NAIRS APP</h2>
+            <form method="POST">
+                
+                <div class="mb-3">
+                    <label for="prompt" class="form-label">Enter Your Prompt</label>
+                    <textarea class="form-control" id="prompt" name="prompt" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Generate</button>
+            </form>
+        </div>
+
+        {% if result %}
+            <div class="card mt-4">
+                {% if 'raw_response' in result %}
+                    <h4>Generated Response</h4>
+                    <p>{{ result.raw_response }}</p>
+                {% else %}
+                    <h4>{{ result.question }}</h4>
+                    <ul class="list-group">
+                        {% for option in result.options %}
+                            <li class="list-group-item">{{ option }}</li>
+                        {% endfor %}
+                    </ul>
+                    <form id="answerForm" class="mt-3">
+                        <input type="hidden" name="correct_option" value="{{ result.correct_option }}">
+                        <input type="hidden" name="explanation" value="{{ result.explanation }}">
+                        <div class="mb-3">
+                            <label for="user_answer" class="form-label">Enter Your Answer (A, B, C, or D)</label>
+                            <input type="text" class="form-control" id="user_answer" name="user_answer" required>
+                        </div>
+                        <button type="button" class="btn btn-success w-100" onclick="checkAnswer()">Submit</button>
+                    </form>
+                    <div id="feedback" class="mt-3"></div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function checkAnswer() {
+            let formData = new FormData(document.getElementById('answerForm'));
+            fetch('/check_answer', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                let feedbackDiv = document.getElementById('feedback');
+                if (data.status === 'success') {
+                    feedbackDiv.innerHTML = `<div class='alert alert-success'>${data.message}</div>`;
+                } else {
+                    feedbackDiv.innerHTML = `<div class='alert alert-danger'>${data.message}</div>`;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
