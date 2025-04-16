@@ -40,6 +40,11 @@ Clone the repo
 ```
 git clone https://github.com/Shegun93/nairs_paper.git
 cd nairs_paper
+```
+install requirements
+```
+pip install -r requirements.txt
+```
 
 ## Key capabilities:
 
