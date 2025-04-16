@@ -1,7 +1,5 @@
 ## Llama-2 Physics Question Generator
----
 This repository contains a fine-tuned Llama-2 model (7B parameters) that generates physics assessment questions, options, correct answers, and explanations based on given problem descriptions.
----
 ## Project Folder Structure
 ```
 .
