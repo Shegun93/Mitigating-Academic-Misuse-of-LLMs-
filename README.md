@@ -2,6 +2,31 @@
 ---
 This repository contains a fine-tuned Llama-2 model (7B parameters) that generates physics assessment questions, options, correct answers, and explanations based on given problem descriptions.
 ---
+## Project Folder Structure
+```
+.
+├── App
+│   ├── app.py
+│   ├── streamlit.py
+│   └── stream.py
+├── Data
+│   ├── Physics_questions.json
+│   └── test_data.json
+├── Dockerfile
+├── Epochs_2
+│   └── events.out.tfevents.1744709703.shegun93-DQ67SW.25349.0
+├── Evaluation.ipynb
+├── nairs-fine-tunned.ipynb
+├── nairs-test.ipynb
+├── __pycache__
+│   ├── app2.cpython-39.pyc
+│   ├── flask.cpython-39.pyc
+│   └── streamlit.cpython-39.pyc
+├── README.md
+├── requirements.txt
+└── templates
+    └── index.html
+```
 
 ## Overview
 
