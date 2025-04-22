@@ -3,9 +3,5 @@ torch==2.3.1+cu118  # CUDA 11.8 compatible version of PyTorch
 transformers==4.48.3
 streamlit
 accelerate
-<<<<<<< HEAD
-bitsandbytes
-=======
 bitsandbytes
 sentence_transformers==2.5.1
->>>>>>> 5fa5f5443c4a988f4f3729d665650aaa69629b79

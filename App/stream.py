@@ -5,29 +5,13 @@ from transformers import BitsAndBytesConfig
 from transformers.utils import is_flash_attn_2_available
 
 # Model Configuration
-<<<<<<< HEAD
-
-model_name = "nairs-2b-fine-tuned"
-=======
 model_name = "./nairs-2b-fine-tuned"
->>>>>>> 5fa5f5443c4a988f4f3729d665650aaa69629b79
 quantization_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.float16)
 use_quantization_config = False  # Set this to False for CPU
 
-<<<<<<< HEAD
-# # Debugging: Check if the model directory exists
-# if not os.path.exists(model_name):
-#     st.error(f"Model directory not found: {model_name}")
-# else:
-#     st.info(f"Model directory exists: {model_name}")
-#     st.info(f"Files in directory: {os.listdir(model_name)}")
- 
-# Check for Flash Attention 2 availability
-=======
 # Disable CUDA if not available
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
->>>>>>> 5fa5f5443c4a988f4f3729d665650aaa69629b79
 if is_flash_attn_2_available() and torch.cuda.get_device_capability(0)[0] >= 8:
     attn_implementation = "flash_attention_2"
 else:
@@ -39,24 +23,6 @@ st.info(f"Loading model: {model_name}")
 # Load Model and Tokenizer
 @st.cache_resource
 def load_model_and_tokenizer():
-<<<<<<< HEAD
-    try:
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            torch_dtype=torch.float16,
-            device_map = "auto",
-            quantization_config=quantization_config if use_quantization_config else None,
-            low_cpu_mem_usage=True,
-            attn_implementation=attn_implementation
-        )
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        model.to(device)
-        return tokenizer, model
-    except Exception as e:
-        st.error(f"Error loading model or tokenizer: {e}")
-        return None, None
-=======
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     
     # Adjusting for CPU usage
@@ -68,7 +34,6 @@ def load_model_and_tokenizer():
         attn_implementation=attn_implementation
     ).to(device)  # Use 'cpu' or 'cuda' based on availability
     return tokenizer, model
->>>>>>> 5fa5f5443c4a988f4f3729d665650aaa69629b79
 
 tokenizer, model = load_model_and_tokenizer()
 
