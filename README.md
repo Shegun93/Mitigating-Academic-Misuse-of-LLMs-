@@ -1,5 +1,6 @@
-## Llama-2 Physics Question Generator
-This repository contains a fine-tuned Llama-2 model (7B parameters) that generates physics assessment questions, options, correct answers, and explanations based on given problem descriptions.
+## Mitigating Academic Misuse of LLms Through Formative AI systems for Personalized Learning Support
+This is a code repository for the title above. This paper proposes an ethical and pedagogically guided use of LLMs to enhance learning without enabling misuse. Drawing techniques such as instruction fine-tuning and structured data modeling, we develop a personalized learning system that assists students in understanding, not solving, academic problems. 
+The system works by accepting a narrated problem scenario from the student, generating diagnostic assessment questions to gauge conceptual understanding, and delivering tailored feedback based on the student’s responses. Unlike general-purpose AI assistants, the model is intentionally constrained to avoid solution generation, instead focusing on formative assessment and guided explanation. The paper is currently undergoing review. 
 ## Overview
 The model was fine-tuned using:
 
