@@ -118,5 +118,247 @@
       },
       "correct_option": "A",
       "explanation": "The Uncertainty Principle applies to conjugate variables like position-momentum (ΔxΔp ≥ ħ/2) and energy-time (ΔEΔt ≥ ħ/2)."
+    },
+    {
+      "input_text": "Resonance occurs when an external force drives a system at its natural frequency, causing large amplitude oscillations.",
+      "question": "Why do soldiers break step when crossing a suspension bridge?",
+      "options": {
+        "A": "To avoid creating resonant vibrations",
+        "B": "To march more comfortably",
+        "C": "To reduce noise",
+        "D": "To maintain balance"
+      },
+      "correct_option": "A",
+      "explanation": "Soldiers break step to avoid creating resonant vibrations that could match the bridge's natural frequency and cause dangerous oscillations."
+    },
+    {
+      "input_text": "Light sources with smaller apparent sizes create sharper shadows due to reduced overlapping of light rays at the edges.",
+      "question": "What type of light source produces the sharpest shadows?",
+      "options": {
+        "A": "Large fluorescent panel",
+        "B": "Point source",
+        "C": "Diffused LED",
+        "D": "Candle flame"
+      },
+      "correct_option": "B",
+      "explanation": "Point sources produce the sharpest shadows because their small size minimizes overlapping of light rays at shadow edges."
+    },
+    {
+      "input_text": "Diopters measure lens power as the reciprocal of focal length in meters, with converging lenses having positive values.",
+      "question": "A lens has a focal length of 0.5 meters. What is its power in diopters?",
+      "options": {
+        "A": "0.5 D",
+        "B": "1 D",
+        "C": "2 D",
+        "D": "5 D"
+      },
+      "correct_option": "C",
+      "explanation": "Power (P) = 1/focal length = 1/0.5 = 2 diopters."
+    },
+    {
+      "input_text": "Inertia causes objects to resist changes in their state of motion, as described by Newton's First Law.",
+      "question": "Why does a standing passenger lurch forward when a bus suddenly brakes?",
+      "options": {
+        "A": "Due to gravity",
+        "B": "Because of inertia",
+        "C": "From air resistance",
+        "D": "Magnetic forces"
+      },
+      "correct_option": "B",
+      "explanation": "The passenger's body continues moving forward due to inertia when the bus decelerates."
+    },
+    {
+      "input_text": "Sound travels faster in solids than gases due to closer particle spacing enabling quicker energy transfer.",
+      "question": "Through which medium does sound travel fastest?",
+      "options": {
+        "A": "Air",
+        "B": "Water",
+        "C": "Steel",
+        "D": "Vacuum"
+      },
+      "correct_option": "C",
+      "explanation": "Sound travels fastest in solids like steel where particles are closely packed."
+    },
+    {
+      "input_text": "Gamma rays have the shortest wavelengths in the EM spectrum, enabling deep tissue penetration.",
+      "question": "Which radiation is used for sterilizing medical equipment?",
+      "options": {
+        "A": "Radio waves",
+        "B": "Visible light",
+        "C": "Gamma rays",
+        "D": "Microwaves"
+      },
+      "correct_option": "C",
+      "explanation": "Gamma rays' high energy and penetration make them effective for sterilization."
+    },
+    {
+      "input_text": "Ohm's Law states current equals voltage divided by resistance (I=V/R).",
+      "question": "What current flows through a 10Ω resistor at 5V?",
+      "options": {
+        "A": "0.5 A",
+        "B": "2 A",
+        "C": "5 A",
+        "D": "50 A"
+      },
+      "correct_option": "A",
+      "explanation": "I = V/R = 5/10 = 0.5 amperes."
+    },
+    {
+      "input_text": "Radiation transfers heat via electromagnetic waves without requiring a medium.",
+      "question": "How does heat from the Sun reach Earth?",
+      "options": {
+        "A": "Conduction",
+        "B": "Convection",
+        "C": "Radiation",
+        "D": "Reflection"
+      },
+      "correct_option": "C",
+      "explanation": "Solar heat travels through space via radiation, the only heat transfer method that works in a vacuum."
+    },
+    {
+      "input_text": "A pendulum's period depends only on length and gravitational acceleration (T=2π√(L/g)).",
+      "question": "What happens to a pendulum's period if its length quadruples?",
+      "options": {
+        "A": "Doubles",
+        "B": "Halves",
+        "C": "Quadruples",
+        "D": "No change"
+      },
+      "correct_option": "A",
+      "explanation": "Period is proportional to the square root of length, so √4 = 2 times longer."
+    },
+    {
+      "input_text": "Gamma radiation's high penetration makes it useful for cancer treatment despite radiation risks.",
+      "question": "Why are gamma rays used in radiotherapy?",
+      "options": {
+        "A": "They're visible",
+        "B": "They penetrate deeply",
+        "C": "They're harmless",
+        "D": "They're colorful"
+      },
+      "correct_option": "B",
+      "explanation": "Gamma rays can reach deep tumors due to their exceptional penetrating power."
+    },
+    {
+      "input_text": "Capacitance measures charge storage per volt, with farads as the SI unit.",
+      "question": "What unit measures a capacitor's charge storage ability?",
+      "options": {
+        "A": "Ohm",
+        "B": "Farad",
+        "C": "Henry",
+        "D": "Tesla"
+      },
+      "correct_option": "B",
+      "explanation": "The farad (F) measures capacitance - charge stored per volt."
+    },
+    {
+      "input_text": "Bernoulli's principle explains lift via pressure differences from airflow velocity changes.",
+      "question": "What creates lift on an airplane wing?",
+      "options": {
+        "A": "Wing color",
+        "B": "Air pressure difference",
+        "C": "Engine vibrations",
+        "D": "Passenger weight"
+      },
+      "correct_option": "B",
+      "explanation": "Faster airflow over the curved upper surface creates lower pressure, generating lift."
+    },
+    {
+      "input_text": "Charles' Law states gas volume is directly proportional to absolute temperature at constant pressure.",
+      "question": "What happens to gas volume when heated at constant pressure?",
+      "options": {
+        "A": "Decreases",
+        "B": "Increases",
+        "C": "Stays same",
+        "D": "Oscillates"
+      },
+      "correct_option": "B",
+      "explanation": "Volume increases with temperature per Charles' Law (V∝T)."
+    },
+    {
+      "input_text": "Faraday's Law states induced EMF depends on flux change rate and coil turns.",
+      "question": "What increases induced current in a generator?",
+      "options": {
+        "A": "Slower rotation",
+        "B": "Fewer coil turns",
+        "C": "Faster flux change",
+        "D": "Smaller magnets"
+      },
+      "correct_option": "C",
+      "explanation": "Faster flux changes (from quicker rotation or stronger fields) increase EMF."
+    },
+    {
+      "input_text": "Total internal reflection occurs when light strikes a less dense medium beyond the critical angle.",
+      "question": "How do fiber optics transmit light long distances?",
+      "options": {
+        "A": "Through metal wires",
+        "B": "By total internal reflection",
+        "C": "Via air gaps",
+        "D": "Using mirrors"
+      },
+      "correct_option": "B",
+      "explanation": "Light reflects completely inside the fiber core when hitting the cladding beyond the critical angle."
+    },
+    {
+      "input_text": "Young's Modulus measures material stiffness as stress/strain ratio within elastic limits.",
+      "question": "What property determines a material's resistance to stretching?",
+      "options": {
+        "A": "Density",
+        "B": "Young's Modulus",
+        "C": "Thermal conductivity",
+        "D": "Color"
+      },
+      "correct_option": "B",
+      "explanation": "Young's Modulus quantifies stiffness - the stress needed to produce elastic strain."
+    },
+    {
+      "input_text": "Geostationary satellites orbit at ~35,786 km altitude with 24-hour periods matching Earth's rotation.",
+      "question": "Why do communication satellites appear stationary?",
+      "options": {
+        "A": "They don't move",
+        "B": "They match Earth's rotation",
+        "C": "They're invisible",
+        "D": "They orbit very fast"
+      },
+      "correct_option": "B",
+      "explanation": "Their orbital period equals Earth's rotational period, maintaining fixed positions relative to the surface."
+    },
+    {
+      "input_text": "Power is work done per unit time, measured in watts (Joules/second).",
+      "question": "What is the power if 100J work is done in 5 seconds?",
+      "options": {
+        "A": "20 W",
+        "B": "50 W",
+        "C": "100 W",
+        "D": "500 W"
+      },
+      "correct_option": "A",
+      "explanation": "Power = Work/Time = 100J/5s = 20 watts."
+    },
+    {
+      "input_text": "The photoelectric effect requires light exceeding a threshold frequency to eject electrons.",
+      "question": "What determines if light can eject electrons from a metal?",
+      "options": {
+        "A": "Brightness",
+        "B": "Frequency",
+        "C": "Color",
+        "D": "Direction"
+      },
+      "correct_option": "B",
+      "explanation": "Only light with frequency above the material's threshold can eject electrons, regardless of intensity."
+    },
+    {
+      "input_text": "Constructive interference occurs when waves combine in phase (peak meets peak).",
+      "question": "When do waves reinforce each other maximally?",
+      "options": {
+        "A": "Out of phase",
+        "B": "Perpendicular",
+        "C": "In phase",
+        "D": "Randomly"
+      },
+      "correct_option": "C",
+      "explanation": "Perfect alignment of peaks and troughs (in phase) causes maximum constructive interference."
     }
   ]
+
+  
