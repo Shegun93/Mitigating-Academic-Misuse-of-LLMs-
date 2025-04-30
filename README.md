@@ -12,7 +12,7 @@ Provides guided explanations, not direct answers
 
 Supports a wide range of physics topics: mechanics, thermodynamics, electromagnetism, optics, etc.
 
-### 📐 System Design
+## 📐 System Design
 The model is trained to take structured input and produce diagnostic reasoning. Here's how it works:
 
 ![System Design](./system_design.png)
