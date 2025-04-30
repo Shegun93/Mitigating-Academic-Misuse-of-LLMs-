@@ -1,16 +1,58 @@
-## Mitigating Academic Misuse of LLms Through Formative AI systems for Personalized Learning Support
-This is a code repository for the title above. This paper proposes an ethical and pedagogically guided use of LLMs to enhance learning without enabling misuse. Drawing techniques such as instruction fine-tuning and structured data modeling, we develop a personalized learning system that assists students in understanding, not solving, academic problems. 
-The system works by accepting a narrated problem scenario from the student, generating diagnostic assessment questions to gauge conceptual understanding, and delivering tailored feedback based on the student’s responses. Unlike general-purpose AI assistants, the model is intentionally constrained to avoid solution generation, instead focusing on formative assessment and guided explanation. The paper is currently undergoing review. 
-## Overview
-The model was fine-tuned using:
+## 🧠 Mitigating Academic Misuse of LLMs Through Formative AI Systems for Personalized Learning Support
+This repository supports the research project focused on building an ethical, personalized learning assistant using Large Language Models (LLMs). The goal is to help students understand physics concepts, not simply generate answers, thereby preserving academic integrity and promoting deep learning
 
-- LoRA (Low-Rank Adaptation) for efficient training
+## 🔧 What This System Does
+Accepts narrated student prompts describing conceptual struggles
 
-- 4-bit quantization to reduce memory requirements
+Generates diagnostic multiple-choice questions to assess understanding
 
-- Physics question dataset in JSON format
+Evaluates student responses to identify conceptual gaps
 
-- Structured Supervised fine-tuning
+Provides guided explanations, not direct answers
+
+Supports a wide range of physics topics: mechanics, thermodynamics, electromagnetism, optics, etc.
+
+### 📐 System Design
+The model is trained to take structured input and produce diagnostic reasoning. Here's how it works:
+
+![System Design](./system_design.png)
+
+## 📁 Dataset Structure
+Each entry includes:
+
+A narrated input text
+
+A multiple-choice question
+
+Four answer options
+
+Correct option
+
+An explanatory rationale
+
+Example:
+
+![Dataset Structure](./dataset_sample.png)
+
+## ⚙️ Model & Training
+The LLM was fine-tuned using:
+
+LoRA (Low-Rank Adaptation) for efficient parameter tuning
+
+4-bit quantization to reduce memory load
+
+Supervised instruction fine-tuning on structured university-level physics questions
+
+Physics dataset curated from Federal University of Technology Akure (FUTA) materials
+
+### 📊 Evaluation Results
+
+| Prompting Method | ROUGE-1 F1 | ROUGE-2 F1 | ROUGE-L F1 |
+|------------------|------------|------------|------------|
+| **Zero-Shot**    | 0.0451     | 0.0196     | 0.0411     |
+| **Few-Shot**     | 0.0828     | 0.0322     | 0.0604     |
+
+
 ## Project Folder Structure
 ```
 .
