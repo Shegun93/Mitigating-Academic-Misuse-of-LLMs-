@@ -2,17 +2,12 @@
 This repository supports the research project focused on building an ethical, personalized learning assistant using Large Language Models (LLMs). The goal is to help students understand physics concepts, not simply generate answers, thereby preserving academic integrity and promoting deep learning
 
 ## 🔧 What This System Does
-Accepts narrated student prompts describing conceptual struggles
-
-Generates diagnostic multiple-choice questions to assess understanding
-
-Evaluates student responses to identify conceptual gaps
-
-Provides guided explanations, not direct answers
-
-Supports a wide range of physics topics: mechanics, thermodynamics, electromagnetism, optics, etc.
-
-### 📐 System Design
+- Accepts narrated student prompts describing conceptual struggles
+- Generates diagnostic multiple-choice questions to assess understanding
+- Evaluates student responses to identify conceptual gaps
+- Provides guided explanations, not direct answers
+- Supports a wide range of physics topics: mechanics, thermodynamics, electromagnetism, optics, etc.
+## 📐 System Design
 The model is trained to take structured input and produce diagnostic reasoning. Here's how it works:
 
 ![System Design](./system_design.png)
