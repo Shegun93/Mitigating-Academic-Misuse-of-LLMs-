@@ -1,36 +1,52 @@
-from flask import Flask, render_template, request, jsonify
-import torch
 import re
+
+import torch
+from flask import Flask, jsonify, render_template, request
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
 app = Flask(__name__)
 
 # Model Configuration
-model_name = "nairs-2e"
-quantization_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.float16)
-use_quantization_config = True
+MODEL_NAME = "/home/shegun93/n_projects/nairs-2e"
+quantization_config = BitsAndBytesConfig(
+    load_in_4bit=True, bnb_4bit_compute_dtype=torch.float16
+)
+USE_QUANTIZATION_CONFIG = True
+
 
 # Load Model and Tokenizer
+
+
 def load_model_and_tokenizer():
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    """
+    Function that loads the model and the tokenizer to memory
+    """
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
     model = AutoModelForCausalLM.from_pretrained(
-        model_name,
+        MODEL_NAME,
         torch_dtype=torch.float16,
-        quantization_config=quantization_config if use_quantization_config else None,
+        quantization_config=quantization_config if USE_QUANTIZATION_CONFIG else None,
         low_cpu_mem_usage=True,
     )
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model.to(device)
     return tokenizer, model
 
+
 tokenizer, model = load_model_and_tokenizer()
+
 
 # Process Model Output
 def process_model_output(output):
+    """
+    Post processing functions.
+    """
     question_match = re.search(r"^(.*?)A:", output, re.DOTALL)
     question = question_match.group(1).strip() if question_match else None
 
-    options_match = re.search(r"(A: .*?)(?=Correct Option:|Explanation:|$)", output, re.DOTALL)
+    options_match = re.search(
+        r"(A: .*?)(?=Correct Option:|Explanation:|$)", output, re.DOTALL
+    )
     options = options_match.group(1).strip().split("\n") if options_match else None
 
     explanation_match = re.search(r"Explanation:(.*)", output, re.DOTALL)
@@ -46,11 +62,12 @@ def process_model_output(output):
             "explanation": explanation,
             "correct_option": correct_option,
         }
-    else:
-        return {"raw_response": output}
+    return {"raw_response": output}
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    """Post queries to Model"""
     if request.method == "POST":
         prompt = request.form.get("prompt")
         if not prompt.strip():
@@ -62,22 +79,34 @@ def index():
 
         processed_output = process_model_output(raw_output)
         return render_template("index.html", result=processed_output)
-    
+
     return render_template("index.html")
+
 
 @app.route("/check_answer", methods=["POST"])
 def check_answer():
+    """Get Response back to the users"""
+
     user_answer = request.form.get("user_answer").strip().upper()
     correct_option = request.form.get("correct_option")
     explanation = request.form.get("explanation")
 
     if user_answer not in ["A", "B", "C", "D"]:
-        return jsonify({"status": "error", "message": "Please enter a valid option (A, B, C, or D)."})
-    
+        return jsonify(
+            {
+                "status": "error",
+                "message": "Please enter a valid option (A, B, C, or D).",
+            }
+        )
+
     if user_answer == correct_option:
-        return jsonify({"status": "success", "message": f"Correct! Explanation: {explanation}"})
-    else:
-        return jsonify({"status": "error", "message": f"Incorrect! Explanation: {explanation}"})
+        return jsonify(
+            {"status": "success", "message": f"Correct! Explanation: {explanation}"}
+        )
+    return jsonify(
+        {"status": "error", "message": f"Incorrect! Explanation: {explanation}"}
+    )
+
 
 if __name__ == "__main__":
     app.run(debug=True)

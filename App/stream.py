@@ -1,48 +1,62 @@
+"""
+Streamlit version API gateway
+"""
+
+import re
+
 import streamlit as st
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from transformers import BitsAndBytesConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from transformers.utils import is_flash_attn_2_available
 
-# Model Configuration
-model_name = "./nairs-2b-fine-tuned"
-quantization_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_compute_dtype=torch.float16)
-use_quantization_config = False  # Set this to False for CPU
+MODEL_NAME = "/home/shegun93/n_projects/nairs-2e"
+QUANTIZATION_CONFIG = BitsAndBytesConfig(
+    load_in_4bit=True, bnb_4bit_compute_dtype=torch.float16
+)
+USE_QUANTIZATION_CONFIG = True
 
-# Disable CUDA if not available
-device = "cuda" if torch.cuda.is_available() else "cpu"
+
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 if is_flash_attn_2_available() and torch.cuda.get_device_capability(0)[0] >= 8:
-    attn_implementation = "flash_attention_2"
+    ATTN_IMPLEMENTATION = "flash_attention_2"
 else:
-    attn_implementation = "sdpa"
+    ATTN_IMPLEMENTATION = "sdpa"
 
-st.info(f"Using attention implementation: {attn_implementation}")
-st.info(f"Loading model: {model_name}")
+st.info(f"Using attention implementation: {ATTN_IMPLEMENTATION}")
+st.info(f"Loading model: {MODEL_NAME}")
 
-# Load Model and Tokenizer
+
 @st.cache_resource
 def load_model_and_tokenizer():
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    
-    # Adjusting for CPU usage
+    """
+    Function that loads the model and the tokenizer to memory
+
+    """
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
     model = AutoModelForCausalLM.from_pretrained(
-        model_name, 
-        torch_dtype=torch.float32,  # Use float32 for CPU
-        quantization_config=quantization_config if use_quantization_config else None,
+        MODEL_NAME,
+        torch_dtype=torch.float16,
+        quantization_config=QUANTIZATION_CONFIG if USE_QUANTIZATION_CONFIG else None,
         low_cpu_mem_usage=True,
-        attn_implementation=attn_implementation
-    ).to(device)  # Use 'cpu' or 'cuda' based on availability
+        attn_implementation=ATTN_IMPLEMENTATION,
+    ).to(DEVICE)
     return tokenizer, model
+
 
 tokenizer, model = load_model_and_tokenizer()
 
-# Function to process model output
+
 def process_model_output(output):
+    """
+    Post processing functions.
+    """
     question_match = re.search(r"^(.*?)A:", output, re.DOTALL)
     question = question_match.group(1).strip() if question_match else None
 
-    options_match = re.search(r"(A: .*?)(?=Correct Option:|Explanation:|$)", output, re.DOTALL)
+    options_match = re.search(
+        r"(A: .*?)(?=Correct Option:|Explanation:|$)", output, re.DOTALL
+    )
     options = options_match.group(1).strip().split("\n") if options_match else None
 
     explanation_match = re.search(r"Explanation:(.*)", output, re.DOTALL)
@@ -58,15 +72,12 @@ def process_model_output(output):
             "options": options,
             "explanation": explanation,
             "correct_option": correct_option,
-            "raw_response": output
-        }
-    else:
-        # If format is incorrect, return raw response
-        return {
-            "raw_response": output
+            "raw_response": output,
         }
 
-# Streamlit Interface
+    return {"raw_response": output}
+
+
 st.title("Student Assessment App")
 
 # Step 1: Prompt Input
@@ -80,7 +91,7 @@ if st.button("Generate"):
         with st.spinner("Generating question and options..."):
             # Generate the response using the model
             inputs = tokenizer(prompt.strip(), return_tensors="pt").to("cuda")
-            output = model.generate(**inputs)
+            output = model.generate(**inputs, max_new_tokens=500)
             raw_output = tokenizer.decode(output[0], skip_special_tokens=True)
 
             # Process the model output
@@ -98,7 +109,7 @@ if st.button("Generate"):
 # Step 2: Display Question and Options
 if "question" in st.session_state and not st.session_state.get("answered", False):
     st.subheader(f"Question: {st.session_state['question']}")
-    
+
     # Display options as buttons
     for option in st.session_state["options"]:
         if st.button(option):
@@ -111,7 +122,7 @@ if "question" in st.session_state and not st.session_state.get("answered", False
                 st.success(f"Correct! Explanation: {explanation}")
             else:
                 st.error(f"Incorrect! Explanation: {explanation}")
-            
+
             # Mark question as answered
             st.session_state["answered"] = True
 
