@@ -74,8 +74,8 @@ def process_model_output(output):
             "correct_option": correct_option,
             "raw_response": output,
         }
-
-    return {"raw_response": output}
+    else:
+        return {"raw_response": output}
 
 
 st.title("Student Assessment App")
