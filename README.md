@@ -29,6 +29,11 @@ Example:
 
 ![Dataset Structure](./dataset_sample.png)
 
+## (inf.png) Model Inference
+Upon inference
+
+![Result_Inference](./Result_Inference.png)
+
 ## ⚙️ Model & Training
 The LLM was fine-tuned using:
 
