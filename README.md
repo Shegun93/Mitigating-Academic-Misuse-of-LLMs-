@@ -29,7 +29,7 @@ Example:
 
 ![Dataset Structure](./dataset_sample.png)
 
-## (inf.png) Model Inference
+## 🧠 Model Inference
 Upon inference
 
 ![Result_Inference](./Result_Inference.png)
