@@ -29,7 +29,7 @@ Example:
 
 ![Dataset Structure](./dataset_sample.png)
 
-## (inf.png) Model Inference
+## 🧠 Model Inference
 Upon inference
 
 ![Result_Inference](./Result_Inference.png)
@@ -58,16 +58,168 @@ Physics dataset curated from Federal University of Technology Akure (FUTA) mater
 .
 ├── App
 │   ├── app.py
-│   ├── streamlit.py
-│   └── stream.py
+│   ├── streamlit_app.py
+│   ├── stream.py
+│   └── templates
+│       └── index.html
+├── bfg.jar
+├── compile.ipynb
 ├── Data
 │   ├── Physics_questions.json
 │   └── test_data.json
+├── dataset_sample.png
 ├── Dockerfile
 ├── Epochs_2
 │   └── events.out.tfevents.1744709703.shegun93-DQ67SW.25349.0
+├── Epochs_5
+│   ├── events.out.tfevents.1745318866.shegun93-DQ67SW.30322.0
+│   ├── events.out.tfevents.1745318915.shegun93-DQ67SW.30322.1
+│   ├── events.out.tfevents.1745319185.shegun93-DQ67SW.30322.2
+│   ├── events.out.tfevents.1745319289.shegun93-DQ67SW.30322.3
+│   ├── events.out.tfevents.1745319658.shegun93-DQ67SW.31522.0
+│   ├── events.out.tfevents.1745319676.shegun93-DQ67SW.31522.1
+│   ├── events.out.tfevents.1745319798.shegun93-DQ67SW.31522.2
+│   ├── events.out.tfevents.1745320300.shegun93-DQ67SW.32463.0
+│   ├── events.out.tfevents.1745320345.shegun93-DQ67SW.32463.1
+│   ├── events.out.tfevents.1745320397.shegun93-DQ67SW.32463.2
+│   ├── events.out.tfevents.1745320413.shegun93-DQ67SW.32463.3
+│   ├── events.out.tfevents.1745320540.shegun93-DQ67SW.32463.4
+│   ├── events.out.tfevents.1745321008.shegun93-DQ67SW.33238.0
+│   └── events.out.tfevents.1745321080.shegun93-DQ67SW.33238.1
 ├── Evaluation.ipynb
+├── Images
+│   ├── ROUGE_Few.png
+│   ├── Zero_shot.png
+│   └── ZerovsFew.png
+├── inf.png
+├── nairs-2d
+│   ├── adapter_config.json
+│   ├── adapter_model.safetensors
+│   ├── README.md
+│   ├── special_tokens_map.json
+│   ├── tokenizer_config.json
+│   ├── tokenizer.json
+│   └── training_args.bin
+├── nairs-2e
+│   ├── adapter_config.json
+│   ├── adapter_model.safetensors
+│   ├── config.json
+│   ├── README.md
+│   ├── special_tokens_map.json
+│   ├── tokenizer_config.json
+│   ├── tokenizer.json
+│   └── training_args.bin
 ├── nairs-fine-tunned.ipynb
+├── nairs_merged
+│   ├── config.json
+│   ├── generation_config.json
+│   ├── model-00001-of-00006.safetensors
+│   ├── model-00002-of-00006.safetensors
+│   ├── model-00003-of-00006.safetensors
+│   ├── model-00004-of-00006.safetensors
+│   ├── model-00005-of-00006.safetensors
+│   ├── model-00006-of-00006.safetensors
+│   ├── model.safetensors.index.json
+│   ├── special_tokens_map.json
+│   ├── tokenizer_config.json
+│   └── tokenizer.json
+├── nairs-sample-4
+│   ├── checkpoint-1164
+│   │   ├── adapter_config.json
+│   │   ├── adapter_model.safetensors
+│   │   ├── optimizer.pt
+│   │   ├── README.md
+│   │   ├── rng_state.pth
+│   │   ├── scheduler.pt
+│   │   ├── special_tokens_map.json
+│   │   ├── tokenizer_config.json
+│   │   ├── tokenizer.json
+│   │   ├── trainer_state.json
+│   │   └── training_args.bin
+│   ├── checkpoint-1358
+│   │   ├── adapter_config.json
+│   │   ├── adapter_model.safetensors
+│   │   ├── optimizer.pt
+│   │   ├── README.md
+│   │   ├── rng_state.pth
+│   │   ├── scheduler.pt
+│   │   ├── special_tokens_map.json
+│   │   ├── tokenizer_config.json
+│   │   ├── tokenizer.json
+│   │   ├── trainer_state.json
+│   │   └── training_args.bin
+│   ├── checkpoint-1552
+│   │   ├── adapter_config.json
+│   │   ├── adapter_model.safetensors
+│   │   ├── optimizer.pt
+│   │   ├── README.md
+│   │   ├── rng_state.pth
+│   │   ├── scheduler.pt
+│   │   ├── special_tokens_map.json
+│   │   ├── tokenizer_config.json
+│   │   ├── tokenizer.json
+│   │   ├── trainer_state.json
+│   │   └── training_args.bin
+│   ├── checkpoint-194
+│   │   ├── adapter_config.json
+│   │   ├── adapter_model.safetensors
+│   │   ├── optimizer.pt
+│   │   ├── README.md
+│   │   ├── rng_state.pth
+│   │   ├── scheduler.pt
+│   │   ├── special_tokens_map.json
+│   │   ├── tokenizer_config.json
+│   │   ├── tokenizer.json
+│   │   ├── trainer_state.json
+│   │   └── training_args.bin
+│   ├── checkpoint-388
+│   │   ├── adapter_config.json
+│   │   ├── adapter_model.safetensors
+│   │   ├── optimizer.pt
+│   │   ├── README.md
+│   │   ├── rng_state.pth
+│   │   ├── scheduler.pt
+│   │   ├── special_tokens_map.json
+│   │   ├── tokenizer_config.json
+│   │   ├── tokenizer.json
+│   │   ├── trainer_state.json
+│   │   └── training_args.bin
+│   ├── checkpoint-582
+│   │   ├── adapter_config.json
+│   │   ├── adapter_model.safetensors
+│   │   ├── optimizer.pt
+│   │   ├── README.md
+│   │   ├── rng_state.pth
+│   │   ├── scheduler.pt
+│   │   ├── special_tokens_map.json
+│   │   ├── tokenizer_config.json
+│   │   ├── tokenizer.json
+│   │   ├── trainer_state.json
+│   │   └── training_args.bin
+│   ├── checkpoint-776
+│   │   ├── adapter_config.json
+│   │   ├── adapter_model.safetensors
+│   │   ├── optimizer.pt
+│   │   ├── README.md
+│   │   ├── rng_state.pth
+│   │   ├── scheduler.pt
+│   │   ├── special_tokens_map.json
+│   │   ├── tokenizer_config.json
+│   │   ├── tokenizer.json
+│   │   ├── trainer_state.json
+│   │   └── training_args.bin
+│   └── checkpoint-970
+│       ├── adapter_config.json
+│       ├── adapter_model.safetensors
+│       ├── optimizer.pt
+│       ├── README.md
+│       ├── rng_state.pth
+│       ├── scheduler.pt
+│       ├── special_tokens_map.json
+│       ├── tokenizer_config.json
+│       ├── tokenizer.json
+│       ├── trainer_state.json
+│       └── training_args.bin
 ├── nairs-test.ipynb
 ├── __pycache__
 │   ├── app2.cpython-39.pyc
@@ -75,8 +227,9 @@ Physics dataset curated from Federal University of Technology Akure (FUTA) mater
 │   └── streamlit.cpython-39.pyc
 ├── README.md
 ├── requirements.txt
-└── templates
-    └── index.html
+├── Result_Inference.png
+└── system_design.png
+
 ```
 ## Usage
 Clone the repo
