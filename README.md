@@ -1,18 +1,18 @@
-## 🧠 Mitigating Academic Misuse of LLMs Through Formative AI Systems for Personalized Learning Support
+## Mitigating Academic Misuse of LLMs Through Formative AI Systems for Personalized Learning Support
 This repository supports the research project focused on building an ethical, personalized learning assistant using Large Language Models (LLMs). The goal is to help students understand physics concepts, not simply generate answers, thereby preserving academic integrity and promoting deep learning
 
-## 🔧 What This System Does
+## What This System Does
 - Accepts narrated student prompts describing conceptual struggles
 - Generates diagnostic multiple-choice questions to assess understanding
 - Evaluates student responses to identify conceptual gaps
 - Provides guided explanations, not direct answers
 - Supports a wide range of physics topics: mechanics, thermodynamics, electromagnetism, optics, etc.
-## 📐 System Design
+## System Design
 The model is trained to take structured input and produce diagnostic reasoning. Here's how it works:
 
 ![System Design](./system_design.png)
 
-## 📁 Dataset Structure
+## Dataset Structure
 Each entry includes:
 
 A narrated input text
@@ -29,12 +29,12 @@ Example:
 
 ![Dataset Structure](./dataset_sample.png)
 
-## 🧠 Model Inference
+## Model Inference
 Upon inference
 
 ![Result_Inference](./Result_Inference.png)
 
-## ⚙️ Model & Training
+## Model & Training
 The LLM was fine-tuned using:
 
 LoRA (Low-Rank Adaptation) for efficient parameter tuning
@@ -45,7 +45,7 @@ Supervised instruction fine-tuning on structured university-level physics questi
 
 Physics dataset curated from Federal University of Technology Akure (FUTA) materials
 
-### 📊 Evaluation Results
+### Evaluation Results
 
 | Prompting Method | ROUGE-1 F1 | ROUGE-2 F1 | ROUGE-L F1 |
 |------------------|------------|------------|------------|
