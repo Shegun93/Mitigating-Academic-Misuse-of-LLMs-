@@ -92,10 +92,7 @@ pip install -r requirements.txt
 
 ## Key capabilities:
 
-- Generates multiple-choice physics questions
-
+- Understand where students might be struggling
 - Provides detailed explanations for correct answers
-
 - Assesses student understanding of physics concepts
-
 - Handles various physics topics (mechanics, thermodynamics, electromagnetism, etc.)
