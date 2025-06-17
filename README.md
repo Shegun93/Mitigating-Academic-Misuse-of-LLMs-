@@ -83,7 +83,7 @@ Physics dataset curated from Federal University of Technology Akure (FUTA) mater
 Clone the repo
 ```
 git clone https://github.com/Shegun93/nairs_paper.git
-cd nairs_paper
+cd Mitigating-Academic-Misuse-of-LLMs-
 ```
 install requirements
 ```
