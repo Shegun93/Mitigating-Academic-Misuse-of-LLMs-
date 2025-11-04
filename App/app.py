@@ -34,15 +34,12 @@ tokenizer, model = load_model_and_tokenizer()
 
 
 def normalize_options_format(text):
-    # Fix any variant like 'D.' or 'C.' to 'D:' or 'C:'
     for letter in ["A", "B", "C", "D"]:
         text = re.sub(rf"{letter}\.", f"{letter}:", text)
 
-    # Ensure each option starts on a new line for reliable splitting
     for letter in ["A:", "B:", "C:", "D:"]:
         text = text.replace(letter, f"\n{letter}")
 
-    # Clean leading/trailing whitespace
     return text.strip()
 
 
@@ -104,7 +101,11 @@ B: To prevent resonance
 C: To minimize friction
 D: To decrease bridge weight
 Answer: B
-Explanation: Marching soldiers are advised to break step on bridges to prevent resonance. When soldiers march in unison, their rhythmic footsteps can match the bridge's natural frequency. This matching of frequencies can cause the bridge to oscillate with increasing amplitude, potentially leading to structural damage. Breaking step ensures that the periodic force isn't applied at the bridge's natural frequency, preventing dangerous resonance effects.
+Explanation: Marching soldiers are advised to break step on bridges to prevent resonance.
+When soldiers march in unison, their rhythmic footsteps can match the bridge's natural frequency.
+This matching of frequencies can cause the bridge to oscillate with increasing amplitude,
+potentially leading to structural damage. Breaking step ensures that the
+periodic force isn't applied at the bridge's natural frequency, preventing dangerous resonance effects.
 
 Now do the same for the context below.
 
@@ -135,7 +136,7 @@ def check_answer():
 
     user_answer = request.form.get("user_answer").strip().upper()
     correct_option = request.form.get("correct_option")
-    explanation = request.form.get("explanation")
+    # explanation = request.form.get("explanation")
 
     if user_answer not in ["A", "B", "C", "D"]:
         return jsonify(
@@ -146,8 +147,8 @@ def check_answer():
         )
 
     if user_answer == correct_option:
-        return jsonify({"status": "success", "message": f"Correct! "})
-    return jsonify({"status": "error", "message": f"Incorrect!"})
+        return jsonify({"status": "success", "message": "Correct!"})
+    return jsonify({"status": "error", "message": "Incorrect!"})
 
 
 if __name__ == "__main__":
